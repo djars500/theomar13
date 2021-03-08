@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{post.name}}
+{% endblock %}
+
+
+{% block content %}
+<h1 class="category_name">{{article.name}}</h1>
+
+<div class="content">
+
+    <div class="single">
+
+
+        <div class="block">
+
+    <img src="{% if article.img %}
+    {{article.img.url}}
+    {% endif %}" alt="">
+    <h3>{{article.full_text}}</h3>
+        </div>
+
+
+
+                </div>
+    </div>
+{% endblock %}

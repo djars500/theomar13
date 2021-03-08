@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="gg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+
+
+</head>
+<body class="gg" >
+    <div class="container">
+        <header>
+            <div class="main__header__logo">
+                <div id="round "class="rounded">
+                     <span id="btnSCheme" class="colorScheme"> </span>
+                </div>
+
+                <a href="/" class="logo">
+<!--                    <div class="logo">-->
+                        <svg class="logo" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 616.39 363.36">
+                            <title>THE O BG</title>
+                                <circle class="logo__circle" cx="315.29" cy="181.68" r="166.68" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="30"/>
+                                <path d="M234.34,511.63H318a2.16,2.16,0,0,1,2.16,2.16v5.61a2.16,2.16,0,0,1-2.16,2.16H284a2.16,2.16,0,0,0-2.16,2.16v43.91a2.16,2.16,0,0,1-2.16,2.16h-8.45a2.16,2.16,0,0,1-2.16-2.16V523.72a2.16,2.16,0,0,0-2.16-2.16H234.34a2.16,2.16,0,0,1-2.16-2.16v-5.61A2.16,2.16,0,0,1,234.34,511.63Z" transform="translate(-231.8 -358.32)" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+                                <path class="logo__h" d="M505,511.63h4.8a3.28,3.28,0,0,1,3.28,3.27v16.15a3.27,3.27,0,0,0,3.27,3.28h53a3.28,3.28,0,0,0,3.28-3.28V514.9a3.27,3.27,0,0,1,3.27-3.27h4.8A3.27,3.27,0,0,1,584,514.9v50.2a3.27,3.27,0,0,1-3.27,3.27h-4.8a3.27,3.27,0,0,1-3.27-3.27V549a3.28,3.28,0,0,0-3.28-3.28h-53a3.27,3.27,0,0,0-3.27,3.28V565.1a3.28,3.28,0,0,1-3.28,3.27H505a3.28,3.28,0,0,1-3.27-3.27V514.9A3.28,3.28,0,0,1,505,511.63Z" transform="translate(-231.8 -358.32)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+                                <path d="M778.4,511.63h66.48a2.94,2.94,0,0,1,2.94,2.94v4a2.94,2.94,0,0,1-2.94,2.94H788.35a2.94,2.94,0,0,0-2.94,2.94v6.88a2.94,2.94,0,0,0,2.94,3h56.53a2.94,2.94,0,0,1,2.94,2.94v5.46a2.94,2.94,0,0,1-2.94,2.94H788.35a2.94,2.94,0,0,0-2.94,3v6.88a2.94,2.94,0,0,0,2.94,2.94h56.53a2.94,2.94,0,0,1,2.94,2.94v4a2.94,2.94,0,0,1-2.94,2.94H778.4a4.34,4.34,0,0,1-4.34-4.34V516A4.34,4.34,0,0,1,778.4,511.63Z" transform="translate(-231.8 -358.32)" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+                        </svg>
+<!--                    </div>-->
+                </a>
+
+            </div>
+
+            <nav class="menu">
+                <ul class="main__parent">
+                    {% for category in categories %}
+                    {% url 'article_list' category.url as cu %}
+                    <a class="menu__item {% if cu == request.path %} active {% endif %}" href="{% url 'article_list' category.url %}"><li>{{category.name}}</li></a>
+
+                    {% endfor %}
+
+                </ul>
+            </nav>
+        </header>
+        {% block content %}
+        {% endblock %}
+
+        <footer class="footer">
+<div class="container">
+                <div class="footer__flex">
+<!--                    <div class="footer__info_link_wrapper">-->
+                        <ul>
+                            <li><a href="#" class="footer__info_links">untitled</a></li>
+                            <li><a href="#" class="footer__info_links">untitled</a></li>
+                            <li><a href="#" class="footer__info_links">untitled</a></li>
+                        </ul>
+<!--                    </div>-->
+                    <div class="footer__logo">
+                        <a href="/" class="logo">
+<!--                            <div class="logo">-->
+                                <svg class="logo" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 616.39 363.36">
+                                    <title>THE O BG</title>
+                                        <circle class="logo__circle" cx="315.29" cy="181.68" r="166.68" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="30"/>
+                                        <path d="M234.34,511.63H318a2.16,2.16,0,0,1,2.16,2.16v5.61a2.16,2.16,0,0,1-2.16,2.16H284a2.16,2.16,0,0,0-2.16,2.16v43.91a2.16,2.16,0,0,1-2.16,2.16h-8.45a2.16,2.16,0,0,1-2.16-2.16V523.72a2.16,2.16,0,0,0-2.16-2.16H234.34a2.16,2.16,0,0,1-2.16-2.16v-5.61A2.16,2.16,0,0,1,234.34,511.63Z" transform="translate(-231.8 -358.32)" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+                                        <path class="logo__h" d="M505,511.63h4.8a3.28,3.28,0,0,1,3.28,3.27v16.15a3.27,3.27,0,0,0,3.27,3.28h53a3.28,3.28,0,0,0,3.28-3.28V514.9a3.27,3.27,0,0,1,3.27-3.27h4.8A3.27,3.27,0,0,1,584,514.9v50.2a3.27,3.27,0,0,1-3.27,3.27h-4.8a3.27,3.27,0,0,1-3.27-3.27V549a3.28,3.28,0,0,0-3.28-3.28h-53a3.27,3.27,0,0,0-3.27,3.28V565.1a3.28,3.28,0,0,1-3.28,3.27H505a3.28,3.28,0,0,1-3.27-3.27V514.9A3.28,3.28,0,0,1,505,511.63Z" transform="translate(-231.8 -358.32)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+                                        <path d="M778.4,511.63h66.48a2.94,2.94,0,0,1,2.94,2.94v4a2.94,2.94,0,0,1-2.94,2.94H788.35a2.94,2.94,0,0,0-2.94,2.94v6.88a2.94,2.94,0,0,0,2.94,3h56.53a2.94,2.94,0,0,1,2.94,2.94v5.46a2.94,2.94,0,0,1-2.94,2.94H788.35a2.94,2.94,0,0,0-2.94,3v6.88a2.94,2.94,0,0,0,2.94,2.94h56.53a2.94,2.94,0,0,1,2.94,2.94v4a2.94,2.94,0,0,1-2.94,2.94H778.4a4.34,4.34,0,0,1-4.34-4.34V516A4.34,4.34,0,0,1,778.4,511.63Z" transform="translate(-231.8 -358.32)" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+                                </svg>
+<!--                            </div>-->
+                        </a>
+                    </div>
+<!--                    <div class="footer__social_icons_wrapper">-->
+                        <ul>
+                            <li><a href="#" class="footer__social_icons">untitled</a></li>
+                            <li><a href="#" class="footer__social_icons">untitled</a></li>
+                            <li><a href="#" class="footer__social_icons">untitled</a></li>
+                        </ul>
+<!--                    </div>-->
+                </div>
+</div>
+        </footer>
+
+        <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>

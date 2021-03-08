@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content">
+            <div class="css__grid__layout">
+                {% for post in posts %}
+                <div class="block">
+
+                    <a href="{% url 'article_detail' post.url %}"><img src="{% if post.img %}
+    {{ post.img.url }}
+    {% endif %}" alt=""></a>
+                    <a href="{% url 'article_detail' post.url %}"><h1>{{post.name}}</h1></a>
+                    <h3>{{post.description}}</h3>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+
+{% endblock %}
+
